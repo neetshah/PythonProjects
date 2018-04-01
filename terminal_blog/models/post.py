@@ -1,8 +1,10 @@
 __author__ = 'shahn17'
 
+from ..database import Database
+
 class Post(object):
 
-    def __init__(self, blog_id, title, content, author, id):
+    def __init__(self, blog_id, title, content, date, author, id):
         self.blog_id = blog_id
         self.title = "Title"
         self.content = "Content"
@@ -15,7 +17,7 @@ class Post(object):
             
     def json(self):
         return {
-            'id':self.id
+            'id':self.id,
             'blog_id':self.blog_id,
             'author':self.author,
             'content':self.content,
