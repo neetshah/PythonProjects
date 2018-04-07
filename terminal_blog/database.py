@@ -1,4 +1,4 @@
-import pymongo
+from pymongo import MongoClient
 
 __author__ = 'shahn17'
 
@@ -8,7 +8,7 @@ class Database(object):
 
     @staticmethod
     def initialize():
-        client = pymongo.MongoClient(Database.URI)
+        client = MongoClient(Database.URI)
         Database.DATABASE = client['fullstack']
 
     @staticmethod
@@ -22,4 +22,3 @@ class Database(object):
     @staticmethod
     def find_one(collection, query):
         return Database.DATABASE[collection].find_one(query)
-        
