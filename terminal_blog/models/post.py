@@ -1,8 +1,9 @@
+from terminal_blog.database import Database
+
 __author__ = 'shahn17'
 
 import uuid
 import datetime
-from terminal_blog.models.database import Database
 
 class Post(object):
 
@@ -27,9 +28,15 @@ class Post(object):
             'created_date':self.created_date
         }
 
-    @staticmethod
-    def from_mongo(id):
-        return Database.find_one('posts', {'id': id})
+    @classmethod
+    def from_mongo(cls, id):
+        post_data = Database.find_one('posts', {'id': id})
+        return cls(post_data['blog_id'],
+                   post_data['title'],
+                   post_data['content'],
+                   post_data['author'],
+                   post_data['created_id'],
+                   post_data['id'])
 
     @staticmethod
     def from_blog(id):
