@@ -1,7 +1,7 @@
 __author__ = 'shahn17'
 
-from database import Database
-from models.post import Post
+from terminal_blog.models.post import Post
+from terminal_blog.models.database import Database
 
 Database.initialize()
 

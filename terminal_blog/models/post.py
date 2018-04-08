@@ -2,7 +2,7 @@ __author__ = 'shahn17'
 
 import uuid
 import datetime
-from ..database import Database
+from terminal_blog.models.database import Database
 
 class Post(object):
 
