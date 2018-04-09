@@ -42,3 +42,5 @@ class Post(object):
     def from_blog(id):
         return [post for post in Database.find('posts', {'blog_id': id})]
 
+
+
